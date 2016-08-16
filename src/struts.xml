@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<action name="Login">
+			<result>/login.jsp</result>
+		</action>
+
+		<action name="loginResult" class="struts03.Action3">
+			<!-- <action name="loginResult" class="struts03.loginAction"> -->
+			<!-- <result name="input">/login.jsp</result> -->
+			<result name="success">/loginResult.jsp</result>
+		</action>
+
+		<action name="selectUser" class="action.UserAction" method="selectUser">
+			<result name="success">/selectResult.jsp</result>
+		</action>
+
+		<!-- 액션을 추가해보자! -->
+		<action name="selectUserList" class="action.UserAction" method="selectUserList">
+			<result name="success">/selectResult.jsp</result>
+		</action>
+
+
+		<action name="updateUser" class="action.UserAction" method="updateUser">
+			<result name="success">/selectResult.jsp</result>
+		</action>
+
+
+	</package>
+</struts>
