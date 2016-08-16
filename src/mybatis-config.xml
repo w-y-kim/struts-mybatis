@@ -9,7 +9,7 @@
 	<typeAliases>
 	<!-- type은 java 파일 경로 , alias는 별칭  UserMapper에서 사용-->
 	
-		<typeAlias alias="User" type="struts03.User" />
+		<typeAlias alias="User" type="vo.User" />
 	</typeAliases>
 
 	<!-- DB접속정보 세팅 -->

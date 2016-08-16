@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-${userId}셀렉트 결과
-아이디 : ${user.userId}
-비번 : ${user.userPw}
-이름 : ${user.username}
+${user}<br/>
+셀렉트 결과<br/>
+아이디 : ${user.userId}<br/>
+비번 : ${user.userPw}<br/>
+이름 : ${user.userName}<br/>
 </body>
 </html>

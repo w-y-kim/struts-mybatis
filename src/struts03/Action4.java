@@ -3,6 +3,7 @@ package struts03;
 import com.opensymphony.xwork2.Action;
 
 import dao.UserDAO;
+import vo.User;
 
 public class Action4 implements Action {
 

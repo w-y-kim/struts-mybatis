@@ -10,6 +10,12 @@
 
 	<package name="default" namespace="/" extends="struts-default">
 
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index">
+			<result>/index.html</result>
+		</action>
+
+
 		<action name="Login">
 			<result>/login.jsp</result>
 		</action>
@@ -31,6 +37,10 @@
 
 
 		<action name="updateUser" class="action.UserAction" method="updateUser">
+			<result name="success">/selectResult.jsp</result>
+		</action>
+		<!-- 셀력트 유저 해쉬 -->
+		<action name="selectUserHash" class="action.UserAction" method="selectUserHash">
 			<result name="success">/selectResult.jsp</result>
 		</action>
 

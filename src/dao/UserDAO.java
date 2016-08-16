@@ -1,11 +1,13 @@
 package dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import struts03.User;
+import vo.User;
+
 
 public class UserDAO {
 	SqlSessionFactory sqlSessionFactory = MybatisConfig.getSqlSessionFactory();
@@ -79,5 +81,24 @@ public class UserDAO {
 			if(sqlSession != null) sqlSession.close();
 		}
 		return result; 
+	}
+	
+	public HashMap selectUserHash(String userId) {
+		HashMap userHash = null;
+		try {
+			sqlSession = sqlSessionFactory.openSession();
+			userHash = sqlSession.selectOne("User.selectUserHash", userId);
+			// sqlSession.selectOne("User.selectUser"); 
+			// UserMapper.xml에서 where절을 주지 않는 경우 파라미터 한개로 수행  
+			
+			// 결과가 한줄 혹은 여러줄 나옴 , 일단 하나받는 경우가 selectOne
+			sqlSession.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (sqlSession != null)
+				sqlSession.close();
+		}
+		return userHash;
 	}
 }

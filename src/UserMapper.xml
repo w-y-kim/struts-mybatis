@@ -28,4 +28,8 @@
 		UPDATE T_USER SET USERPW = #{userPw}, USERNAME = #{userName}
 		WHERE USERID = #{userId}
 	</update>
+	
+	<select id="selectUserHash" parameterType="String" resultType="HashMap">
+		SELECT * FROM T_USER WHERE USERID=#{userid}
+	</select>
 </mapper>
